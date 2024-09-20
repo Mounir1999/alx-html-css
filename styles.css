@@ -1,0 +1,135 @@
+/* Set up flexbox for body and main containers */
+body, main {
+    display: flex;
+  }
+  
+  /* Body settings */
+  body {
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    background-color: #e1e1e1;
+    font-family: Arial, sans-serif;
+    line-height: 1.6; /* Improved readability */
+  }
+  
+  /* Main container with row flexbox for article and aside */
+  main {
+    flex-direction: row;
+    flex: 1; /* Takes remaining height after header and footer */
+    background-color: #abe117;
+  }
+  
+  /* Article (takes 2/3 of width) */
+  article {
+    flex: 2;
+    padding: 20px;
+    border-right: 3px solid #ccc;
+    background-color: #ffffff; /* Added a neutral background */
+    color: #333; /* Better contrast for readability */
+    overflow-y: auto; /* Allows scrolling for overflow content */
+  }
+  
+  /* Aside (takes 1/3 of width) */
+  aside {
+    flex: 1;
+    padding: 20px;
+    background-color: #117abe;
+    color: #ffffff; /* White text for better contrast */
+    overflow-y: auto;
+  }
+  
+  /* Header and footer styles */
+  header, footer {
+    background-color: #04e781;
+    color: #9e2b2b;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* Footer specific styles */
+  footer {
+    margin-top: auto;
+    background-color: #04e781; /* Consistent background */
+    color: #9e2b2b;
+    border-top: 1px solid #ccc;
+  }
+  
+  /* Navigation styling inside the header */
+  header ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Added gap for spacing between links */
+  }
+  
+  header li {
+    display: inline;
+  }
+  
+  header a {
+    text-decoration: none;
+    color: #9e2b2b;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Table styling within article */
+  article table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+  }
+  
+  /* Table header and cells */
+  table th, table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  article th {
+    background-color: #117abe;
+    color: #fff;
+  }
+  
+  article td {
+    background-color: #f1f1f1;
+  }
+  
+  /* Heading and paragraph styling for better contrast and readability */
+  article h1, article h2, article h3 {
+    color: #117abe;
+  }
+  
+  article p {
+    color: #666;
+    line-height: 1.7;
+    margin: 10px 0;
+  }
+  
+  /* Image styling */
+  article img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+    border-radius: 8px; /* Rounded corners for images */
+  }
+  
+  /* Responsive improvements */
+  @media (max-width: 768px) {
+    main {
+      flex-direction: column; /* Stacks article and aside vertically on small screens */
+    }
+  
+    article, aside {
+      flex: 1; /* Both take full width in vertical layout */
+    }
+  }
+  
